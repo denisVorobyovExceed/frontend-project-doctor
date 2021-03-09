@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Switch,
   Route,
   Redirect,
-  useRouteMatch
+  useRouteMatch,
+  useHistory
 } from 'react-router-dom';
 import './LogInPage.scss';
-import logo from '../img/signin-logo.svg';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+import logo from '../../img/signin-logo.svg';
+import SignIn from '../SignIn/SignIn';
+import SignUp from '../SignUp/SignUp';
 
 import { Container } from '@material-ui/core';
 
 function LogInPage({ setTitle }) {
   let match = useRouteMatch();
+  const history = useHistory();
+
+  useEffect(() => {
+    if ( localStorage.getItem('user') ) {
+      history.push('/');
+    }
+  }, [history]);
 
   return (
     <Container maxWidth='md' className='main-container'>

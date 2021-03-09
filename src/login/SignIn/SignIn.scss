@@ -37,6 +37,13 @@
   text-transform: none;
 }
 
+.login-error.MuiTypography-body1 {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgb(172, 0, 0);
+  max-width: 321px;
+}
+
 .bottom-buttons {
   display: flex;
   flex-direction: column;

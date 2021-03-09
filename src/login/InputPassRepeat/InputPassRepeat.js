@@ -6,11 +6,7 @@ function InputPassRepeat({ setInputParent, firstPass }) {
   const [isGood, setIsGood] = useState(false); 
 
   const comparePass = (e) => {
-    if (firstPass && e.target.value === firstPass) {
-      setIsGood(true);
-    } else {
-      setIsGood(false);
-    }
+    setIsGood(firstPass && e.target.value === firstPass);
   }
 
   return (

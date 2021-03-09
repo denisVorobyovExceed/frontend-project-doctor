@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './SignUp.scss';
-import InputPass from './InputPass';
-import InputPassRepeat from './InputPassRepeat';
-import InputLogin from './InputLogin';
+import InputPass from '../InputPass/InputPass';
+import InputPassRepeat from '../InputPassRepeat/InputPassRepeat';
+import InputLogin from '../InputLogin/InputLogin';
 import {
   Paper,
   FormGroup,
@@ -19,47 +19,45 @@ function SignUp({ setTitle }) {
   const [isDisabled, setDisabled] = useState(true);
   const [isLoginOccupied, setLoginOccupied] = useState(false);
 
-  const vefifyForm = () => {
+  useEffect( () => {
+    setTitle('Зарегистрироваться в системе')
+  }, [setTitle]);
+ 
+  useEffect( () => {
     const loginClear = inputLogin.trim();
-
     if (
       loginClear.length > 5 
       && /^(?=.*\d)(?=.*[a-zA-Z])(?=(.*[0-9]){1}).{6,}$/.test(inputPassword) 
       && inputPassword === inputPasswordAgain
     ) {
       setDisabled(false);
-    }
-  }
-
-  useEffect( () => {
-    vefifyForm(); 
-  });
-
-  useEffect( () => {
-    setTitle('Зарегистрироваться в системе')
-  }, [])
+    } 
+  }, [inputLogin, inputPassword, inputPasswordAgain]);
 
   const submitForm = async () => {
     await axios.post('http://localhost:8000/reg', {
       login: inputLogin,
       password: inputPassword
-    }).then(res => {
-      if (res.status === 201) { //okay!
+    })
+    .then(res => {
+      if (res.status === 201) {
         setLoginOccupied(false);
         localStorage.setItem('user', res.data.user);
-        //handle this later
-      } else if (res.status === 208) { //username occupied
+        localStorage.setItem('token', res.data.token);
+        window.location.reload();
+      } else if (res.status === 208) {
         setInputLogin('');
         setLoginOccupied(true);
       }
+    })
+    .catch(error => {
+      //handle others
     });
   }
 
   return (
     <Paper variant="outlined" className='signup-window'>
-      <Typography 
-        className='signup-title'
-      >Регистрация</Typography>
+      <Typography className='signup-title'>Регистрация</Typography>
 
       <FormGroup>
         <Typography className='input-label'>Login:</Typography>

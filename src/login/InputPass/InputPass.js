@@ -7,9 +7,7 @@ function InputPass({ setInputParent }) {
   const [isGood, setIsGood] = useState(false); 
 
   const checkPass = (pass) => {
-    if(/^(?=.*\d)(?=.*[a-zA-Z])(?=(.*[0-9]){1}).{6,}$/.test(pass)) {
-      return true;
-    } else return false;
+    return /^(?=.*\d)(?=.*[a-zA-Z])(?=(.*[0-9]){1}).{6,}$/.test(pass);
   }
   
   const helperTextBad = 'От 6 символов, латиница и хотя бы 1 цифра';
