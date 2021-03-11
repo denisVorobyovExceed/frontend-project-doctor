@@ -9,7 +9,7 @@ import Header from './common/Header/Header';
 import LogInPage from './login/LoginPage/LogInPage'
 import Appointment from './appointment/Appointment/Appointment';
 
-function App() {
+export default function App() {
   const [title, setTitle] = useState('Главная');
 
   return (
@@ -31,5 +31,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

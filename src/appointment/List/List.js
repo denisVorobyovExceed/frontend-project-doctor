@@ -1,21 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './List.scss';
 import { Container } from '@material-ui/core';
 import Buttons from '../Buttons/Buttons';
 
-function List({ appointments, doctors }) {
+export default function List(props) {
+  const [state, setState] = useState(true);
+  useEffect( () => setState(!state), [props]); //it was necessary
   
-  const getDoctorsName = (id) => {
-    let fullName = '';
-    doctors.forEach(doctor => {
-      if (doctor._id === id) fullName = doctor.name;
-    });
-    return fullName;
-  }
-
   return (
-    <Container className='table-container' maxWidth="md">
-      <table class='table'>
+    <Container className='table-container' maxWidth="lg">
+      <table className='table'>
         <thead>
           <tr className='head-row'>
             <th>Имя</th>
@@ -26,21 +20,45 @@ function List({ appointments, doctors }) {
           </tr>
         </thead>
         <tbody>
-        {appointments.map(item => (
-          <tr className='app-row'>
-            <td className='app-cell'>{item.patientName}</td>
-            <td className='app-cell'>{getDoctorsName(item.doctorId)}</td>
-            <td className='app-cell'>
-              {(new Date( Date.parse(item.date) )).toLocaleDateString('ru-RU')}
-            </td>
-            <td className='app-cell comp'>{item.complaints}</td>
-            <td className='app-cell'><Buttons /></td>
-          </tr>
-        ))}
+          <SingleRow {...props}/>
         </tbody>
       </table>
+      {props.appointments === [] ? <p>Записи отсутствуют</p> : false}
     </Container>
-  )
+  );
 }
+//move it back later:
+function SingleRow({ appointments, doctors, getAppointments }) {
+  const getDoctorsName = (id) => {
+    let fullName = '';
+    doctors.forEach(doctor => {
+      if (doctor._id === id) fullName = doctor.name;
+    });
+    return fullName;
+  }
 
-export default List;
+  return (
+    <>
+    {appointments.map( (item, index) => (
+      <tr className='app-row' key={`row-${index}`}>
+        <td className='app-cell' key={`row-${index}-name`}>
+          {item.patientName}</td>
+        <td className='app-cell' key={`row-${index}-doc`}>
+          {getDoctorsName(item.doctorId)}</td>
+        <td className='app-cell' key={`row-${index}-date`}>
+          {(new Date( Date.parse(item.date) )).toLocaleDateString('ru-RU')}</td>
+        <td className='app-cell comp' key={`row-${index}-comp`}>
+          {item.complaints}</td>
+        <td className='app-cell' key={`row-${index}-butt`}>
+          <Buttons 
+            key={`row-${index}-button`}
+            appointment={item} 
+            doctors={doctors}
+            getAppointments={getAppointments}
+          />
+        </td>
+      </tr>
+    ))}
+    </>
+  );
+}

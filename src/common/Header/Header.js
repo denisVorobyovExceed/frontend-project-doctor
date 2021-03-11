@@ -17,7 +17,7 @@ function Header({ title }) {
 
   return (
     <div className='header'>
-      <Container className='header-container' maxWidth="md">
+      <Container className='header-container' maxWidth="lg">
         <div className='left-block'>  
           <Link to='/'>
             <img 

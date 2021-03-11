@@ -1,3 +1,7 @@
+@media (min-width: 720px) {
+  
+}
+
 .filter-tab {
   margin-top: 10px;
   width: 100%;
@@ -30,6 +34,7 @@
 
 .MuiTextField-root {
   width: 99%;
+  max-width: 300px;
 }
 
 .MuiButton-outlined {

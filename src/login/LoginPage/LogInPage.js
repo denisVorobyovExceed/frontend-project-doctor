@@ -13,7 +13,7 @@ import SignUp from '../SignUp/SignUp';
 
 import { Container } from '@material-ui/core';
 
-function LogInPage({ setTitle }) {
+export default function LogInPage({ setTitle }) {
   let match = useRouteMatch();
   const history = useHistory();
 
@@ -41,7 +41,5 @@ function LogInPage({ setTitle }) {
       </Switch>
 
     </Container>
-  )
+  );
 }
-
-export default LogInPage;

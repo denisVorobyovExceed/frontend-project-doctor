@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@material-ui/core';
 
-function SignUp({ setTitle }) {
+export default function SignUp({ setTitle }) {
   const [inputLogin, setInputLogin] = useState('');
   const [inputPassword, setInputPassword] = useState('');
   const [inputPasswordAgain, setInputPasswordAgain] = useState('');
@@ -86,7 +86,5 @@ function SignUp({ setTitle }) {
         </div>
       </FormGroup>
     </Paper>
-  )
+  );
 }
-
-export default SignUp;

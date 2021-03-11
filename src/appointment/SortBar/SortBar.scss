@@ -1,0 +1,43 @@
+.sort-bar-container.MuiContainer-root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 39px;
+}
+
+#select-sort {
+  max-width: 200px !important;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 18px;
+}
+
+#select-sort-direction {
+  max-width: 200px !important;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.sort-by-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 300px;
+}
+
+.sort-direction-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 300px;
+}
+
+.sort-label.MuiTypography-body1 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: none;
+  padding: 0 18px 0 18px;
+}

@@ -49,7 +49,6 @@ function NewTab({ doctors, getAppointments }) {
       if (res.status === 201) {
         setPatientName('');
         setDoctorName('');
-        setDate();
         setComplaints('');
         //добавить шастливое сообшение
       }
@@ -62,7 +61,7 @@ function NewTab({ doctors, getAppointments }) {
 
   return (
     <div className='filter-tab'>
-      <Container className='filter-tab-container' maxWidth="md">
+      <Container className='filter-tab-container' maxWidth="lg">
         <div className='filter-tab-row'>
           <Typography className='label'>Имя</Typography>
           <TextField
