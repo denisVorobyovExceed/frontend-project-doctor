@@ -1,0 +1,19 @@
+.main-container.MuiContainer-root {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-top: 41px;
+}
+
+.login-logo {
+  width: 375px;
+  height: 375px;
+}
+
+@media (max-width: 360px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

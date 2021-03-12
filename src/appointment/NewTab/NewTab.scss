@@ -1,0 +1,52 @@
+@media (min-width: 720px) {
+  //I promise, I'll do it somewhen
+}
+
+.filter-tab {
+  margin-top: 10px;
+  width: 100%;
+  height: 117px;
+  background: #C5E9FF;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.filter-tab-container.MuiContainer-root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 117px;
+}
+
+.filter-tab-row {
+  width: 18%;
+  text-align: left;
+  
+  p.MuiTypography-body1 {
+    font-family: 'Roboto';
+    font-weight: 300;
+  }
+}
+
+.MuiOutlinedInput-root {
+  background-color: white !important;
+}
+
+.MuiTextField-root {
+  width: 99%;
+}
+
+.MuiButton-outlined {
+  background-color: white !important;
+}
+
+.MuiButton-label {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: none;
+}
+
+.label {
+  padding-left: 4px;
+}

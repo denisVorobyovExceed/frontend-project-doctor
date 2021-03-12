@@ -1,0 +1,65 @@
+.signup-window.MuiPaper-root {
+  padding: 40px 40px 0 40px;
+  text-align: left;
+}
+
+.signup-title.MuiTypography-body1 {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  margin: 0 0 40px 23px;
+}
+
+.input-label.MuiTypography-body1 {
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.input.MuiFormControl-root {
+  padding-bottom: 8px;
+  width: 321px;
+}
+
+.button-reg.MuiButton-root {
+  width: 205px;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: none;
+  margin-top: 32px;
+}
+
+.signin-link.MuiButton-root {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: none;
+}
+
+.login-error.MuiTypography-body1 {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgb(172, 0, 0);
+  max-width: 321px;
+}
+
+.bottom-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 7px;
+  padding-bottom: 24px;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+  }
+}

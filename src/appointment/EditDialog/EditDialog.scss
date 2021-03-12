@@ -1,0 +1,68 @@
+.MuiDialog-paperWidthSm {
+  min-width: 400px;
+  width: 50vw;
+}
+
+#edit-dialog-title.MuiDialogTitle-root {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 42px;
+    padding: 4px 0 4px 16px;
+  }
+}
+
+#edit-dialog-content.MuiDialogContent-root {
+  margin: 6px 40px 24px 40px !important;
+}
+
+.label.MuiTypography-body1 {
+  font-family: 'Roboto' !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px; 
+  color: #000000;
+  padding-top: 18px;
+}
+
+.edit-actions.MuiDialogActions-root {
+  box-shadow: 4px 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+}
+
+.MuiInputBase-root {
+  input {
+    font-family: 'Roboto' !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px; 
+    color: #000000;
+  }
+  textarea {
+    font-family: 'Roboto' !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px; 
+    color: #000000;
+  }
+}
+
+li.MuiMenuItem-root {
+  font-family: 'Roboto' !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px; 
+  color: #000000;
+}
+
+#input-doctor {
+  font-family: 'Roboto' !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px; 
+  color: #000000;
+}
