@@ -11,9 +11,13 @@ import {
 } from '@material-ui/core';
 import './EditDialog.scss';
 
-export default function EditDialog(
-  { appointment, doctors, open, saveApp, setOpen }
-  ) {
+export default function EditDialog({ 
+  appointment, 
+  doctors, 
+  open, 
+  saveApp, 
+  setOpen 
+}) {
   const [patientName, setPatientName] = useState(appointment.patientName);
   const [doctorName, setDoctorName] = useState(
     getDoctorsName(appointment.doctorId)
