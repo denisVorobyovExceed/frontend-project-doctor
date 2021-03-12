@@ -10,7 +10,7 @@ import {
   DialogTitle 
 } from '@material-ui/core';
 import './EditDialog.scss';
-
+ 
 export default function EditDialog({ 
   appointment, 
   doctors, 
@@ -76,7 +76,7 @@ export default function EditDialog({
         </DialogTitle>
         <DialogContent id="edit-dialog-content">
 
-          <Typography className='label'>Имя:</Typography>
+          <Typography className='new-label'>Имя:</Typography>
           <TextField
             id="input-name"
             value={patientName}
@@ -85,7 +85,7 @@ export default function EditDialog({
             onChange={e => setPatientName(e.target.value)}
           />
 
-          <Typography className='label'>Врач:</Typography>
+          <Typography className='new-label'>Врач:</Typography>
           <TextField
             id="input-doctor"
             select
@@ -101,7 +101,7 @@ export default function EditDialog({
             ))}
           </TextField>
 
-          <Typography className='label'>Дата:</Typography>
+          <Typography className='new-label'>Дата:</Typography>
           <TextField
             id="date"
             type="date"
@@ -115,7 +115,7 @@ export default function EditDialog({
             onChange={e => setDate(e.target.value)}
           />
 
-          <Typography className='label'>Жалобы:</Typography>
+          <Typography className='new-label'>Жалобы:</Typography>
           <TextField
             id="input-complaints"
             value={complaints}

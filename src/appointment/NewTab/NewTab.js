@@ -54,10 +54,10 @@ function NewTab({ doctors, getAppointments }) {
   }
 
   return (
-    <div className='filter-tab'>
-      <Container className='filter-tab-container' maxWidth="lg">
-        <div className='filter-tab-row'>
-          <Typography className='label'>Имя</Typography>
+    <div className='new-tab'>
+      <Container className='new-tab-container' maxWidth="lg">
+        <div className='new-tab-row'>
+          <Typography className='new-label'>Имя</Typography>
           <TextField
             id="input-name"
             value={patientName}
@@ -66,10 +66,11 @@ function NewTab({ doctors, getAppointments }) {
             onChange={e => setPatientName(e.target.value)}
           />
         </div>
-        <div className='filter-tab-row'>
-          <Typography className='label'>Врач</Typography>
+        <div className='new-tab-row'>
+          <Typography className='new-label'>Врач</Typography>
           <TextField
-            id="input-doctor"
+            id="doctor"
+            className='new-doctor-input'
             select
             value={doctorName}
             onChange={e => setDoctorName(e.target.value)}
@@ -83,8 +84,8 @@ function NewTab({ doctors, getAppointments }) {
             ))}
           </TextField>
         </div>
-        <div className='filter-tab-row'>
-          <Typography className='label'>Дата</Typography>
+        <div className='new-tab-row'>
+          <Typography className='new-label'>Дата</Typography>
           <TextField
             id="date"
             type="date"
@@ -98,8 +99,8 @@ function NewTab({ doctors, getAppointments }) {
             onChange={e => setDate(e.target.value)}
           />
         </div>
-        <div className='filter-tab-row'>
-          <Typography className='label'>Жалобы</Typography>
+        <div className='new-tab-row'>
+          <Typography className='new-label'>Жалобы</Typography>
           <TextField
             id="input-complaints"
             value={complaints}
@@ -108,8 +109,8 @@ function NewTab({ doctors, getAppointments }) {
             onChange={e => setComplaints(e.target.value)}
           />
         </div>
-        <div className='filter-tab-row'>
-          <Typography className='label'>&nbsp;</Typography>
+        <div className='new-tab-row'>
+          <Typography className='new-label'>&nbsp;</Typography>
           <Button 
             variant="outlined"
             disabled={isDisabled}

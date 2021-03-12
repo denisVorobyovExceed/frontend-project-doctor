@@ -57,4 +57,4 @@ function SingleRow({ appointments, doctors, getAppointments }) {
     ))}
     </>
   );
-}
+} 

@@ -2,7 +2,7 @@
   //I promise, I'll do it somewhen
 }
 
-.filter-tab {
+.new-tab {
   margin-top: 10px;
   width: 100%;
   height: 117px;
@@ -10,7 +10,7 @@
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.filter-tab-container.MuiContainer-root {
+.new-tab-container.MuiContainer-root {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,7 +18,7 @@
   height: 117px;
 }
 
-.filter-tab-row {
+.new-tab-row {
   width: 18%;
   text-align: left;
   
@@ -32,21 +32,21 @@
   background-color: white !important;
 }
 
-.MuiTextField-root {
-  width: 99%;
+.new-doctor-input.MuiFormControl-root {
+  width: 99%; 
 }
-
-.MuiButton-outlined {
+//FIX SHIT BELOW!!!!!!!!!!!! 
+.MuiButton-outlined { 
   background-color: white !important;
 }
 
-.MuiButton-label {
+.MuiButton-label { 
   font-family: 'Roboto';
   font-weight: 300;
   font-size: 18px;
   text-transform: none;
 }
 
-.label {
+.new-label {
   padding-left: 4px;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SortBar.scss';
 import {
   Container,
@@ -6,6 +6,7 @@ import {
   TextField,
   MenuItem
 } from '@material-ui/core';
+import AddBoxOutlinedIcon from '@material-ui/icons/AddBoxOutlined';
 
 export default function SortBar(props) {
   return (
@@ -29,6 +30,17 @@ export default function SortBar(props) {
       {props.howSort !== 'none'
         ? <SortDirection {...props}/>
         : false
+      }
+      {props.filterOn ? false : 
+        <div className="filter-add-block">
+          <Typography className="sort-label">
+            Добавить&nbsp;фильтр&nbsp;по&nbsp;дате:
+          </Typography>
+          <AddBoxOutlinedIcon 
+            onClick={() => props.setFilterOn(true)}
+            fontSize="large"
+          />
+        </div>
       }
     </Container>
   );

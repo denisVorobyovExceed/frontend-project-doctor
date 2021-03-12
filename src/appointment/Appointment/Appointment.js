@@ -6,6 +6,7 @@ import NewTab from '../NewTab/NewTab';
 import List from '../List/List';
 import SnackbarMessage from '../../common/SnackbarMessage/SnackbarMessage';
 import SortBar from '../SortBar/SortBar';
+import FilterBar from '../FilterBar/FilterBar';
 
 export default function Appointment({ setTitle }) {
   const [doctors, setDoctors] = useState([]);
@@ -13,6 +14,8 @@ export default function Appointment({ setTitle }) {
   const [errorText, setErrorText] = useState('');
   const [howSort, setHowSort] = useState('none');
   const [sortDirection, setSortDirection] = useState(true);
+  const [filterOn, setFilterOn] = useState(false);
+  const [filterFromTo, setFilterFromTo] = useState({from: null, to: null});
   const history = useHistory();
 
   useEffect(() => { 
@@ -21,10 +24,10 @@ export default function Appointment({ setTitle }) {
     }
   }, [history]);
   useEffect( () => setTitle('Приемы'), [setTitle]);
-  useEffect( () => getAppointments(), []);
+  useEffect( () => getAppointments(), [filterFromTo]);
   useEffect( () => {
-    setAppointments( sortAppointments(appointments, sortDirection) );
-  }, [howSort, sortDirection]);
+    setAppointments( sortAppointments( filterAppointments(appointments), sortDirection) );
+  }, [howSort, sortDirection, filterFromTo]);
   useEffect( () => {
     const getDoctors = async () => {
       const authStr = `Bearer ${localStorage.getItem('token')}`;
@@ -71,6 +74,20 @@ export default function Appointment({ setTitle }) {
     return sortedAppointments;
   }
 
+  const filterAppointments = (apps) => {
+    return apps.filter(app => {
+      if (filterFromTo?.from && filterFromTo?.to) {
+        return (
+        app.date.split('T')[0] > filterFromTo.from 
+        && app.date.split('T')[0] < filterFromTo.to
+      )} else if (filterFromTo?.from && !filterFromTo?.to) {
+        return app.date.split('T')[0] > filterFromTo.from
+      } else if (!filterFromTo?.from && filterFromTo?.to) {
+        return app.date.split('T')[0] < filterFromTo.to
+      } else return true;
+    })
+  }
+
   const getAppointments = async () => {
     const authStr = `Bearer ${localStorage.getItem('token')}`;
     await axios.get('http://localhost:8000/app/getAppointments', { 
@@ -78,8 +95,8 @@ export default function Appointment({ setTitle }) {
     }).then(res => {
       if (res.status === 200) {
         if (howSort !== 'none') {
-          setAppointments( sortAppointments(res.data, sortDirection) ) 
-        } else setAppointments(res.data);
+          setAppointments( sortAppointments( filterAppointments(res.data), sortDirection) ) 
+        } else setAppointments( filterAppointments(res.data) );
       }
     }).catch(error => handleError(error));
   }
@@ -103,7 +120,16 @@ export default function Appointment({ setTitle }) {
         setHowSort={setHowSort}
         sortDirection={sortDirection}
         setSortDirection={setSortDirection}
+        filterOn={filterOn}
+        setFilterOn={setFilterOn}
       />
+      {filterOn
+        ? <FilterBar 
+          setFilterFromTo={setFilterFromTo}
+          setFilterOn={setFilterOn}
+        /> 
+        : false
+      }
       <List 
         appointments={appointments} 
         doctors={doctors} 

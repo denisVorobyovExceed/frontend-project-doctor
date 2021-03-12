@@ -16,7 +16,7 @@
   font-family: 'Roboto';
   font-weight: 300;
   font-size: 18px;
-}
+} 
 
 .sort-by-block {
   display: flex;
@@ -26,6 +26,13 @@
 }
 
 .sort-direction-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 300px;
+}
+
+.filter-add-block {
   display: flex;
   flex-direction: row;
   align-items: center;
