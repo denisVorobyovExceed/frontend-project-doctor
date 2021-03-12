@@ -37,13 +37,7 @@ export default function Appointment({ setTitle }) {
     getDoctors();
   }, []);
 
-  const getDoctorsName = (id) => {
-    let fullName = '';
-    doctors.forEach(doctor => {
-      if (doctor._id === id) fullName = doctor.name;
-    });
-    return fullName;
-  }
+  const getDoctorsName = (id) => doctors.filter(doc => doc._id === id)[0]?.name;
 
   const sortAppointments = (apps, asc) => {
     let sortedAppointments = apps;
@@ -56,8 +50,9 @@ export default function Appointment({ setTitle }) {
         break;
       case 'doctor':
         sortedAppointments.sort( (a, b) => {
-          if (getDoctorsName(a.doctorId) > getDoctorsName(b.doctorId)) return asc ? 1 : -1;
-          else return asc ? -1 : 1;
+          if (getDoctorsName(a.doctorId) > getDoctorsName(b.doctorId)) {
+            return asc ? 1 : -1;
+          } else return asc ? -1 : 1;
         });
         break;
       case 'date':

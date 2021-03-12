@@ -11,14 +11,9 @@ import {
 } from '@material-ui/core';
 import './EditDialog.scss';
 
-export default function EditDialog({ appointment, doctors, open, saveApp, setOpen }) {
-  const getDoctorsName = (id) => {
-    let fullName = '';
-    doctors.forEach(doctor => {
-      if (doctor._id === id) fullName = doctor.name;
-    });
-    return fullName;
-  }
+export default function EditDialog(
+  { appointment, doctors, open, saveApp, setOpen }
+  ) {
   const [patientName, setPatientName] = useState(appointment.patientName);
   const [doctorName, setDoctorName] = useState(
     getDoctorsName(appointment.doctorId)
@@ -45,13 +40,11 @@ export default function EditDialog({ appointment, doctors, open, saveApp, setOpe
   }, [patientName, doctorName, dateOfAppointment, complaints]);
 
   const getDoctorId = () => {
-    let id = 0;
-    doctors.forEach(doctor => {
-      if (doctor.name === doctorName) {
-        id = doctor._id;
-      }
-    });
-    return id;
+    return doctors.filter(doc => doc.name === doctorName)[0]._id;
+  }
+
+  function getDoctorsName(id) {
+    return doctors.filter(doc => doc._id === id)[0]?.name;
   }
 
   const handleSave = () => {

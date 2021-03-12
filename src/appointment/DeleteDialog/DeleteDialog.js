@@ -20,7 +20,7 @@ export default function DeleteDialog({ open, delApp, setOpen }) {
         aria-describedby="delete-dialog-description"
       >
         <DialogTitle id="delete-dialog-title" >
-          {"Удалить прием"}
+          Удалить прием
         </DialogTitle>
         <DialogContent>
           <DialogContentText 

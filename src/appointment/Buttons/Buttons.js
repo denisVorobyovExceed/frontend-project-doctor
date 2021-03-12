@@ -10,7 +10,6 @@ export default function Buttons({ appointment, doctors, getAppointments }) {
   const [editOpen, setEditOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
 
-
   const deleteAppointment = async () => {
     const authStr = `Bearer ${localStorage.getItem('token')}`;
     await axios.delete('http://localhost:8000/app/deleteAppointment', { 
@@ -44,7 +43,6 @@ export default function Buttons({ appointment, doctors, getAppointments }) {
     <div className='buttons'>
       <EditIcon onClick={() => setEditOpen(true)} />
       <DeleteOutlineIcon onClick={() => setDeleteOpen(true)} />
-
       <EditDialog 
         open={editOpen}
         saveApp={saveAppointment}

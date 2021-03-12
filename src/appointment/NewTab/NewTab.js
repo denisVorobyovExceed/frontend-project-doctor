@@ -25,13 +25,7 @@ function NewTab({ doctors, getAppointments }) {
   }, [patientName, doctorName, dateOfAppointment, complaints]);
 
   const getDoctorId = () => {
-    let id = 0;
-    doctors.forEach(doctor => {
-      if (doctor.name === doctorName) {
-        id = doctor._id;
-      }
-    });
-    return id;
+    return doctors.filter(doc => doc.name === doctorName)[0]._id;
   }
 
   const addAppointment = async () => {

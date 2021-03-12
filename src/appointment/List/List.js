@@ -30,11 +30,7 @@ export default function List(props) {
 //move it back later:
 function SingleRow({ appointments, doctors, getAppointments }) {
   const getDoctorsName = (id) => {
-    let fullName = '';
-    doctors.forEach(doctor => {
-      if (doctor._id === id) fullName = doctor.name;
-    });
-    return fullName;
+    return doctors.filter(doc => doc._id === id)[0]?.name;
   }
 
   return (
