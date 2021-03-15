@@ -35,7 +35,7 @@ function InputLogin({ setInputParent, isLoginOccupied }) {
     <TextField 
       variant="outlined"
       size="small" 
-      className={isGood ? 'input correct' : 'input'}
+      className={isGood ? 'signup-input correct-login' : 'signup-input'}
       helperText={inputLoginHelper}
       onChange={ e => {
         setInputParent(e.target.value);

@@ -14,7 +14,7 @@ function InputPassRepeat({ setInputParent, firstPass }) {
       variant="outlined"
       type="password"
       size="small" 
-      className={isGood ? 'input correct' : 'input'}
+      className={isGood ? 'signup-input correct-pass-again' : 'signup-input'}
       onChange={ e => {
         setInputParent(e.target.value);
         comparePass(e);

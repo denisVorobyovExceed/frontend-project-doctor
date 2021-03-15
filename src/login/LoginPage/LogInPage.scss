@@ -2,18 +2,46 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-around;
   padding-top: 41px;
 }
 
 .login-logo {
-  width: 375px;
-  height: 375px;
+  max-width: 375px;
+  max-height: 375px;
+  width: 90%;
+  padding-left: calc(10px + 10 * ((100vw - 768px) / 1152));
+  padding-right: calc(30px + 30 * ((100vw - 768px) / 1152));
 }
 
-@media (max-width: 360px) {
-  .main-container {
+.loginpage-left, .loginpage-right {
+  width: 50%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .main-container.MuiContainer-root {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 41px;
+  }
+
+  .loginpage-left, .loginpage-right {
+    width: 70vw;
+    text-align: center;
+  }
+
+  .login-logo {
+    padding: 40px 0;
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginpage-left, .loginpage-right {
+    width: 100%;
+    text-align: center;
   }
 }

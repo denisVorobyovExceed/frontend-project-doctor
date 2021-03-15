@@ -28,7 +28,7 @@ function InputPass({ setInputParent }) {
       variant="outlined"
       type="password"
       size="small" 
-      className={isGood ? 'input correct' : 'input'}
+      className={isGood ? 'signup-input correct-pass' : 'signup-input'}
       helperText={inputPasswordHelper}
       onChange={ e => {
         setInputParent(e.target.value);

@@ -5,7 +5,7 @@
 .table {
   width: 100%;
   font-family: 'Roboto' !important;
-  font-size: 18px;
+  font-size: calc(16px + 10 * ((100vw - 768px) / 1152)) !important;
   font-weight: 300;
   border-spacing: 0px;
   border-collapse: collapse;
@@ -30,6 +30,10 @@ th {
 
   &:last-child {
     border-bottom: 1px solid black;
+  }
+
+  &:nth-child(even) {
+    background-color: rgb(248, 248, 248);
   }
 }
 

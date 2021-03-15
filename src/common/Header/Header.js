@@ -29,7 +29,14 @@ function Header({ title }) {
           <Typography className='header-title'>{title}</Typography>
         </div>
         {localStorage.getItem('user')
-        ? <div className='right-block'><Button variant="outlined" className='button-reg' onClick={signOut}>Выйти</Button></div>
+        ? <div className='right-block'>
+            <Button 
+              variant="outlined"
+              size="small" 
+              className='button-reg' 
+              onClick={signOut}
+            >Выйти</Button>
+          </div>
         : false
         }
       </Container>

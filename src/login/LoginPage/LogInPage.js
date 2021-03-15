@@ -25,21 +25,24 @@ export default function LogInPage({ setTitle }) {
 
   return (
     <Container maxWidth='md' className='main-container'>
-      <img 
+      <div className="loginpage-left">
+        <img 
         src={logo} 
         className='login-logo' 
-        alt='Logo'/>
-
-      <Switch>
-        <Route path={`${match.url}/signup`}>
-          <SignUp setTitle={setTitle}/>
-        </Route>
-        <Route path={`${match.url}/signin`}>
-          <SignIn setTitle={setTitle}/>
-        </Route>
-        <Redirect from={`${match.url}`} to={`${match.url}/signup`} />
-      </Switch>
-
+        alt='Logo'
+        />
+      </div>
+      <div className="loginpage-right">
+        <Switch>
+          <Route path={`${match.url}/signup`}>
+            <SignUp setTitle={setTitle}/>
+          </Route>
+          <Route path={`${match.url}/signin`}>
+            <SignIn setTitle={setTitle}/>
+          </Route>
+          <Redirect from={`${match.url}`} to={`${match.url}/signup`} />
+        </Switch>
+      </div>
     </Container>
   );
 }

@@ -1,7 +1,6 @@
 .header {
   width: 100%;
   height: 117px;
-  background: #C5E9FF;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -31,18 +30,50 @@
 }
 
 .header-title.MuiTypography-body1 {
-  padding-left: 75px;
+  padding-left: calc(30px + 45 * ((100vw - 480px) / 1152));
   font-style: normal;
-  font-weight: 100;
-  font-size: 36px;
-  line-height: 42px;
+  font-weight: 300;
+  font-size: calc(36px + 16 * ((100vw - 768px) / 1152));
+  line-height: calc(42px + 16 * ((100vw - 768px) / 1152));;
   color: #000000;
 }
 
-.button-reg.MuiButton-root {
+.button-reg.MuiButton-outlined {
   background-color: rgba(255, 255, 255, 0.1) !important;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.6) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container.MuiContainer-root {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header {
+    width: 100%;
+    height: auto;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .left-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-block {
+    justify-content: center;
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  .header-title.MuiTypography-body1 {
+    padding-left: 0;
+    text-align: center;
   }
 }

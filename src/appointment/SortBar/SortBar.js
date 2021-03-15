@@ -11,26 +11,28 @@ import AddBoxOutlinedIcon from '@material-ui/icons/AddBoxOutlined';
 export default function SortBar(props) {
   return (
     <Container className="sort-bar-container" maxWidth="lg">
-      <div className="sort-by-block">
-        <Typography className="sort-label">Сортировать&nbsp;по:</Typography>
-        <TextField
-          id="select-sort"
-          select
-          value={props.howSort}
-          onChange={e => props.setHowSort(e.target.value)}
-          variant="outlined"
-          size="small"
-        >
-          <MenuItem value='name'>Имя</MenuItem>
-          <MenuItem value='doctor'>Врач</MenuItem>
-          <MenuItem value='date'>Дата</MenuItem>
-          <MenuItem value='none'>нет</MenuItem>
-        </TextField>
+      <div className="sort-bar-left">
+        <div className="sort-by-block">
+          <Typography className="sort-label">Сортировать&nbsp;по:</Typography>
+          <TextField
+            id="select-sort"
+            select
+            value={props.howSort}
+            onChange={e => props.setHowSort(e.target.value)}
+            variant="outlined"
+            size="small"
+          >
+            <MenuItem value='name'>Имя</MenuItem>
+            <MenuItem value='doctor'>Врач</MenuItem>
+            <MenuItem value='date'>Дата</MenuItem>
+            <MenuItem value='none'>нет</MenuItem>
+          </TextField>
+        </div>
+        {props.howSort !== 'none'
+          ? <SortDirection {...props}/>
+          : false
+        }
       </div>
-      {props.howSort !== 'none'
-        ? <SortDirection {...props}/>
-        : false
-      }
       {props.filterOn ? false : 
         <div className="filter-add-block">
           <Typography className="sort-label">

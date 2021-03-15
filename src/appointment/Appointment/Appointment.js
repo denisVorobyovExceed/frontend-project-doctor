@@ -111,30 +111,34 @@ export default function Appointment({ setTitle }) {
 
   return (
     <div>
-      <NewTab 
-        doctors={doctors} 
-        getAppointments={getAppointments} 
-      />
-      <SortBar
-        howSort={howSort}
-        setHowSort={setHowSort}
-        sortDirection={sortDirection}
-        setSortDirection={setSortDirection}
-        filterOn={filterOn}
-        setFilterOn={setFilterOn}
-      />
-      {filterOn
-        ? <FilterBar 
-          setFilterFromTo={setFilterFromTo}
+      <div className="fixed-bar">
+        <NewTab 
+          doctors={doctors} 
+          getAppointments={getAppointments} 
+        />
+        <SortBar
+          howSort={howSort}
+          setHowSort={setHowSort}
+          sortDirection={sortDirection}
+          setSortDirection={setSortDirection}
+          filterOn={filterOn}
           setFilterOn={setFilterOn}
-        /> 
-        : false
-      }
-      <List 
-        appointments={appointments} 
-        doctors={doctors} 
-        getAppointments={getAppointments}
-      />
+        />
+        {filterOn
+          ? <FilterBar 
+            setFilterFromTo={setFilterFromTo}
+            setFilterOn={setFilterOn}
+          /> 
+          : false
+        }
+      </div>
+      <div className='table-container'>
+        <List 
+          appointments={appointments} 
+          doctors={doctors} 
+          getAppointments={getAppointments}
+        />
+      </div>
       <SnackbarMessage 
         text={errorText}
         type='error'

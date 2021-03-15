@@ -1,0 +1,10 @@
+.table-container {
+  overflow: scroll; ///////////////
+}
+
+.fixed-bar {
+  position: sticky; 
+  top: 0;
+  background: #C5E9FF;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}

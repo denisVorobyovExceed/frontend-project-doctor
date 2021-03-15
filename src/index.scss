@@ -1,7 +1,36 @@
 body {
   margin: 0;
-  font-family: "Roboto" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #C5E9FF;
+}
+
+p.MuiTypography-root {
+  font-family: "Roboto";
+  font-size: calc(18px + 6 * ((100vw - 768px) / 1152));
+  font-style: normal;
+  font-weight: 300;
+}
+
+button.MuiButton-root {
+  font-family: "Roboto";
+  font-size: calc(18px + 6 * ((100vw - 768px) / 1152)) !important;
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+}
+
+.MuiInputBase-root {
+  font-family: "Roboto";
+  font-size: calc(18px + 6 * ((100vw - 768px) / 1152)) !important;
+  font-style: normal;
+  font-weight: 300 !important;
+}
+
+.MuiOutlinedInput-root {
+  background-color: white !important;
+}
+
+.MuiButton-outlined { 
+  background-color: white !important;
 }

@@ -1,5 +1,4 @@
 .MuiDialog-paperWidthSm {
-  min-width: 400px;
   width: 50vw;
 }
 
@@ -10,8 +9,8 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: calc(36px + 16 * ((100vw - 768px) / 1152));
+    line-height: calc(42px + 16 * ((100vw - 768px) / 1152));
     padding: 4px 0 4px 16px;
   }
 }
@@ -20,13 +19,8 @@
   margin: 6px 40px 24px 40px !important;
 }
 
-.new-label.MuiTypography-body1 {
-  font-family: 'Roboto' !important;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  color: #000000;
-  padding-top: 18px;
+.edit-input.MuiFormControl-root {
+  width: 100%;
 }
 
 .edit-actions.MuiDialogActions-root {
@@ -34,35 +28,37 @@
   padding: 24px;
 }
 
-.MuiInputBase-root {
-  input {
-    font-family: 'Roboto' !important;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px; 
-    color: #000000;
-  }
-  textarea {
-    font-family: 'Roboto' !important;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px; 
-    color: #000000;
-  }
-}
-
 li.MuiMenuItem-root {
   font-family: 'Roboto' !important;
   font-style: normal;
   font-weight: 300;
-  font-size: 18px; 
-  color: #000000;
+  font-size: calc(18px + 6 * ((100vw - 768px) / 1152));
 }
 
-#input-doctor {
-  font-family: 'Roboto' !important;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px; 
-  color: #000000;
+@media (max-width: 768px) {
+  .MuiDialog-paperWidthSm {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .MuiDialog-paperWidthSm {
+    width: 90vw;
+  }
+
+  #edit-dialog-content.MuiDialogContent-root {
+    margin: 6px 36px 24px 36px !important;
+    padding: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .MuiDialog-paperWidthSm {
+    width: 100vw;
+  }
+
+  #edit-dialog-content.MuiDialogContent-root {
+    margin: 12px 16px 12px 16px !important;
+    padding: 0;
+  }
 }

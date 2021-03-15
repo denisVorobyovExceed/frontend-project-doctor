@@ -78,6 +78,7 @@ export default function EditDialog({
 
           <Typography className='new-label'>Имя:</Typography>
           <TextField
+            className="edit-input"
             id="input-name"
             value={patientName}
             variant="outlined"
@@ -88,6 +89,7 @@ export default function EditDialog({
           <Typography className='new-label'>Врач:</Typography>
           <TextField
             id="input-doctor"
+            className="edit-input"
             select
             value={doctorName}
             onChange={e => setDoctorName(e.target.value)}
@@ -104,6 +106,7 @@ export default function EditDialog({
           <Typography className='new-label'>Дата:</Typography>
           <TextField
             id="date"
+            className="edit-input"
             type="date"
             placeholder='false'
             defaultValue={dateOfAppointment}
@@ -118,6 +121,7 @@ export default function EditDialog({
           <Typography className='new-label'>Жалобы:</Typography>
           <TextField
             id="input-complaints"
+            className="edit-input"
             value={complaints}
             variant="outlined"
             size="small"

@@ -39,7 +39,7 @@ export default function DeleteDialog({ open, delApp, setOpen }) {
           </Button>
           <Button 
             variant="outlined" 
-            color="primary" 
+            color="secondary" 
             size="small" 
             autoFocus
             onClick={delApp}

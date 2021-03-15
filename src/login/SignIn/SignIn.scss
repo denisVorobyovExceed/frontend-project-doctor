@@ -1,50 +1,38 @@
-.signup-window.MuiPaper-root {
+.signin-window.MuiPaper-root {
   padding: 40px 40px 0 40px;
   text-align: left;
 }
 
-.signup-title.MuiTypography-body1 {
+p.signin-title.MuiTypography-root {
   font-style: normal;
   font-weight: 300;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: calc(36px + 16 * ((100vw - 768px) / 1152));
+  line-height: calc(42px + 16 * ((100vw - 768px) / 1152));
   margin: 0 0 40px 23px;
 }
 
-.input-label.MuiTypography-body1 {
+.signin-input-label.MuiTypography-body1 {
   padding-bottom: 8px;
-  font-size: 18px;
-  font-weight: 300;
 }
 
-.input.MuiFormControl-root {
+.signin-input.MuiFormControl-root {
   padding-bottom: 8px;
-  width: 321px;
 }
 
-.button-reg.MuiButton-root {
-  width: 205px;
-  font-size: 18px;
-  font-weight: 300;
-  text-transform: none;
+.button-log.MuiButton-root {
   margin-top: 32px;
 }
 
 .signin-link.MuiButton-root {
   margin-top: 8px;
-  font-size: 18px;
-  font-weight: 300;
-  text-transform: none;
 }
 
 .login-error.MuiTypography-body1 {
-  font-size: 18px;
-  font-weight: 300;
   color: rgb(172, 0, 0);
   max-width: 321px;
 }
 
-.bottom-buttons {
+.signin-bottom-buttons {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -53,6 +41,7 @@
   width: 100%;
 
   a {
+    display: block;
     text-decoration: none;
 
     &:hover {

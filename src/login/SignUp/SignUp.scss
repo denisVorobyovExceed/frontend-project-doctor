@@ -1,42 +1,30 @@
 .signup-window.MuiPaper-root {
-  padding: 40px 40px 0 40px;
+  max-width: 100%;
+  padding: calc(36px + 6 * ((100vw - 768px) / 1152));
   text-align: left;
 }
 
-.signup-title.MuiTypography-body1 {
+p.signup-title.MuiTypography-root {
   font-style: normal;
   font-weight: 300;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: calc(36px + 16 * ((100vw - 768px) / 1152));
+  line-height: calc(42px + 16 * ((100vw - 768px) / 1152));
   margin: 0 0 40px 23px;
 }
 
-.input-label.MuiTypography-body1 {
+.signup-input-label.MuiTypography-body1 {
   padding-bottom: 8px;
-  font-size: 18px;
-  font-weight: 300;
 }
 
 .input.MuiFormControl-root {
   padding-bottom: 8px;
-  width: 321px;
-}
-
-.button-reg.MuiButton-root {
-  width: 205px;
-  font-size: 18px;
-  font-weight: 300;
-  text-transform: none;
 }
 
 .signin-link.MuiButton-root {
   margin-top: 8px;
-  font-size: 18px;
-  font-weight: 300;
-  text-transform: none;
 }
 
-.bottom-buttons {
+.signup-bottom-buttons {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -45,6 +33,7 @@
   width: 100%;
 
   a {
+    display: block;
     text-decoration: none;
 
     &:hover {
@@ -53,5 +42,12 @@
     &:visited {
       text-decoration: none;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-window.MuiPaper-root {
+    padding: calc(36px + 6 * ((100vw - 768px) / 1152));
+    text-align: left;
   }
 }

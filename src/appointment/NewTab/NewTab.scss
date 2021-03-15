@@ -1,13 +1,9 @@
-@media (min-width: 720px) {
-  //I promise, I'll do it somewhen
-}
-
 .new-tab {
   margin-top: 10px;
   width: 100%;
-  height: 117px;
-  background: #C5E9FF;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px 0;
+  text-align: center;
 }
 
 .new-tab-container.MuiContainer-root {
@@ -18,35 +14,117 @@
   height: 117px;
 }
 
-.new-tab-row {
-  width: 18%;
-  text-align: left;
-  
-  p.MuiTypography-body1 {
-    font-family: 'Roboto';
-    font-weight: 300;
+.new-tab-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(300% / 5);
+  justify-content: space-between;
+
+  .new-tab-row { 
+    width: 100%;
+    padding: 0 5px;
+    text-align: left;
   }
 }
 
-.MuiOutlinedInput-root {
-  background-color: white !important;
+.new-tab-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(200% / 5);
+  justify-content: space-between;
+
+  .new-tab-row:first-child { 
+    width: 100%;
+    padding: 0 5px;
+    text-align: left;
+  }
+
+  .new-tab-row:last-child { 
+    padding: 0 5px;
+    text-align: center;
+  }
 }
 
-.new-doctor-input.MuiFormControl-root {
-  width: 99%; 
-}
-//FIX SHIT BELOW!!!!!!!!!!!! 
-.MuiButton-outlined { 
-  background-color: white !important;
-}
-
-.MuiButton-label { 
-  font-family: 'Roboto';
-  font-weight: 300;
-  font-size: 18px;
-  text-transform: none;
+.new-tab-row .MuiFormControl-root {
+  width: 100%; 
 }
 
 .new-label {
   padding-left: 4px;
+}
+
+.new-tab-buttons {
+  text-align: center;
+}
+
+.hide-button {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .new-tab-container.MuiContainer-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .new-tab-left, .new-tab-right {
+    width: 100%;
+  }
+
+  .new-tab-left .new-tab-row {
+    width: calc(100% / 3);
+    text-align: left;
+  }
+
+  .new-tab-right .new-tab-row:first-child {
+    width: 100%;
+    text-align: left;
+  }
+
+  .hide-button {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .new-tab-left, .new-tab-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .new-tab-left .new-tab-row {
+    width: 100%;
+    text-align: left;
+  }
+
+  .new-tab-right .new-tab-row:first-child {
+    width: 100%;
+    text-align: left;
+  }
+
+  .new-tab-right .new-tab-row:last-child {
+    width: 100%;
+    text-align: left;
+  }
+
+  .hide-button {
+    display: block;
+  }
+
+  .label-buttons {
+    display: none;
+  }
+
+  .new-tab-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
 }

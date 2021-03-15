@@ -24,10 +24,11 @@ export default function List(props) {
         </tbody>
       </table>
       {props.appointments === [] ? <p>Записи отсутствуют</p> : false}
+      <p>&nbsp;</p>
     </Container>
   );
 }
-//move it back later:
+
 function SingleRow({ appointments, doctors, getAppointments }) {
   const getDoctorsName = (id) => {
     return doctors.filter(doc => doc._id === id)[0]?.name;

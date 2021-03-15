@@ -49,31 +49,34 @@ function SignIn({ setTitle }) {
   return (
     <Paper variant="outlined" className='signup-window'>
       <Typography 
-        className='signup-title'
+        className='signin-title'
       >Войти в систему</Typography>
 
       <FormGroup>
-        <Typography className='input-label'>Login:</Typography>
+        <Typography className='signin-input-label'>Login:</Typography>
         <TextField 
           id="login" 
           variant="outlined"
           size="small" 
-          className='input'
+          className='signin-input'
           onChange={e => {
             setInputLogin(e.target.value);
           }}
           autoFocus
         />
 
-        <Typography className='input-label'>Password:</Typography>
+        <Typography className='signin-input-label'>Password:</Typography>
         <TextField 
           id="password" 
           variant="outlined"
           type="password"
           size="small" 
-          className='input'
+          className='signin-input'
           onChange={e => {
             setInputPassword(e.target.value);
+          }}
+          onKeyDown={e => {
+            if (e.key === 'Enter') submitForm()
           }}
         />
 
@@ -84,10 +87,10 @@ function SignIn({ setTitle }) {
           : false
         }
 
-        <div className='bottom-buttons'>
+        <div className='signin-bottom-buttons'>
           <Button 
             variant="outlined"
-            className='button-reg'
+            className='button-log'
             onClick={submitForm}
           >Войти</Button>
           <Link to={`/login/signup`}>

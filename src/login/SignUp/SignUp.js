@@ -60,19 +60,19 @@ export default function SignUp({ setTitle }) {
       <Typography className='signup-title'>Регистрация</Typography>
 
       <FormGroup>
-        <Typography className='input-label'>Login:</Typography>
+        <Typography className='signup-input-label'>Login:</Typography>
         <InputLogin setInputParent={setInputLogin} isLoginOccupied={isLoginOccupied} />
 
-        <Typography className='input-label'>Password:</Typography>
+        <Typography className='signup-input-label'>Password:</Typography>
         <InputPass setInputParent={setInputPassword} />
 
-        <Typography className='input-label'>Repeat password:</Typography>
+        <Typography className='signup-input-label'>Repeat password:</Typography>
         <InputPassRepeat 
           setInputParent={setInputPasswordAgain} 
           firstPass={inputPassword}
         />
 
-        <div className='bottom-buttons'>
+        <div className='signup-bottom-buttons'>
           <Button 
             variant="outlined"
             className='button-reg'
